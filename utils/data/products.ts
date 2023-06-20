@@ -11,6 +11,7 @@ export const products = [
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-1.webp',
+      '/images/products/product-2.webp'
     ],
     punctuation: {
       countOpinions: 81,

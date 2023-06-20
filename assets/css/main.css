@@ -8,7 +8,7 @@ body {
 :root {
   --main-font: 'Poppins';
   --font-title: 'Archivo';
-  --color-orange: #FBB03B;
+  --color-orange: #83b3ee;
   --color-orange-light: #FFF3DF;
   --color-black: #333333;
   --color-text: #868686;
@@ -1597,6 +1597,7 @@ h5 {
   left: 8px;
   right: 8px;
   bottom: 8px;
+  border-radius: 100%;
 }
 
 .checkbox-color:first-of-type .checkbox__check {
@@ -2198,6 +2199,12 @@ h5 {
   }
 }
 
+.product-single .product-gallery {
+  display: flex;
+  gap: 20px;
+  flex-direction: column-reverse;
+}
+
 @media (min-width: 767px) {
   .product-single .product-gallery {
     margin-right: 110px;
@@ -2205,18 +2212,19 @@ h5 {
 }
 
 .product-single .product-gallery .product-gallery__thumbs {
-  height: 300px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  gap: 20px;
 }
 
-@media (min-width: 767px) {
-  .product-single .product-gallery .product-gallery__thumbs {
-    height: 491px;
-  }
+.product-single .product-gallery .product-gallery__thumb {
+  width: 70px;
 }
 
 @media (min-width: 767px) {
   .product-single .product-gallery .product-gallery__thumb {
-    height: calc(100%/5 - 15px);
+    width: 80px;
   }
 }
 
@@ -2311,6 +2319,7 @@ h5 {
 
 .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color .checkbox__check {
   border: 1px solid #D4D4D4;
+  border-radius: 100%;
 }
 
 .product-content .product-filter-item .checkbox-color-wrapper .checkbox-color .checkbox__color {
@@ -2318,6 +2327,7 @@ h5 {
   left: 4px;
   right: 4px;
   bottom: 4px;
+  border-radius: 100%;
 }
 
 @media (min-width: 767px) {

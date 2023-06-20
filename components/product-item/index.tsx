@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavProduct } from 'store/reducers/user';
 import { RootState } from 'store';
 import { ProductTypeList } from 'types';
+import CheckboxColor from 'components/products-filter/form-builder/checkbox-color';
 
-const ProductItem = ({ discount, images, id, name, price, currentPrice }: ProductTypeList) => {
+const ProductItem = ({ discount, images, id, name, price, currentPrice, colors }: ProductTypeList) => {
   const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user);
 
@@ -13,7 +14,7 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice }: Produc
 
   const toggleFav = () => {
     dispatch(toggleFavProduct(
-      { 
+      {
         id,
       }
     ))
@@ -27,20 +28,31 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice }: Produc
         <Link href={`/product/${id}`}>
           <a>
             <img src={images ? images[0] : ''} alt="product" />
-            {discount && 
+            {discount &&
               <span className="product__discount">{discount}%</span>
             }
           </a>
         </Link>
       </div>
-      
+
       <div className="product__description">
+        <div className="checkbox-color-wrapper">
+          {colors && colors.map((type, index) => (
+            <CheckboxColor
+              key={index} 
+              type={'radio'}
+              name="product-color"
+              color={type}
+              valueName={type}
+            />
+          ))}
+        </div>
         <h3>{name}</h3>
         <div className={"product__price " + (discount ? 'product__price--discount' : '')} >
-          <h4>${ currentPrice }</h4>
+          <h4>${currentPrice}</h4>
 
-          {discount &&  
-            <span>${ price }</span>
+          {discount &&
+            <span>${price}</span>
           }
         </div>
       </div>
