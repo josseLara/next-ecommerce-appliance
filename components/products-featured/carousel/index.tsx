@@ -47,6 +47,7 @@ const ProductsCarousel = ({ products }: ProductsCarouselType) => {
               currentPrice={item.currentPrice}
               key={item.id}
               images={item.images} 
+              colors={item.colors}
             />
           </SwiperSlide>
         ))}

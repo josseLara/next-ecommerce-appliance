@@ -36,18 +36,15 @@ const ProductItem = ({ discount, images, id, name, price, currentPrice, colors }
       </div>
 
       <div className="product__description">
-        <div className="checkbox-color-wrapper">
-          {colors && colors.map((type, index) => (
-            <CheckboxColor
-              key={index} 
-              type={'radio'}
-              name="product-color"
-              color={type}
-              valueName={type}
-            />
-          ))}
-        </div>
         <h3>{name}</h3>
+        <div className="colors-wrapper">
+          <h2>color</h2>
+          <div className="colors-wrapper-group">
+            {colors && colors.map((color, index) => (
+              <span style={{ backgroundColor: color }} key={index} className='color-wrapper' />
+            ))}
+          </div>
+        </div>
         <div className={"product__price " + (discount ? 'product__price--discount' : '')} >
           <h4>${currentPrice}</h4>
 
