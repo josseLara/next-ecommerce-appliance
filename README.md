@@ -1,4 +1,4 @@
-# Next.js Ecommerce
+# Next.js Ecommerce Appliance
 
 ### Tecnologias usadas
 [![HTML5](https://img.shields.io/badge/html5-black?style=for-the-badge&logo=html5)](https://hub.docker.com/u/josseLara)
