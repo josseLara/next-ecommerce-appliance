@@ -8,4 +8,8 @@
 [![Redux](https://img.shields.io/badge/redux-black?style=for-the-badge&logo=redux)](https://github.com/josseLara)
 
 
+#Demo 
+link: 
+# Vista Previa
 
+![image](https://github.com/josseLara/next-ecommerce-appliance/assets/99273526/7a332c86-6a82-4f4b-b6eb-861d83a7a23c)
