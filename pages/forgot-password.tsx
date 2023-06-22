@@ -1,23 +1,25 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { server } from '../utils/server';
 import { postData } from '../utils/services';
 
 type ForgotMail = {
   email: string;
+  password:string;
 }
 
 const ForgotPassword = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<ForgotMail>();
 
-  const onSubmit = async (data: ForgotMail) => {
+  const onSubmit:SubmitHandler<ForgotMail> = async (data: ForgotMail) => {
     const res = await postData(`${server}/api/login`, {
       email: data.email,
     });
 
     console.log(res);
   };
+
 
   return (
     <Layout>
@@ -40,7 +42,7 @@ const ForgotPassword = () => {
                     className="form__input"
                     placeholder="email"
                     type="text"
-                    name="email"
+                    // name="email"
                     {...register("email", {
                       required: true,
                       pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -61,7 +63,7 @@ const ForgotPassword = () => {
                     className="form__input"
                     type="password"
                     placeholder="Password"
-                    name="password"
+                    // name="password"
                     {...register("password", { required: true })}
                   />
                   {errors?.password && errors.password.type === 'required' &&

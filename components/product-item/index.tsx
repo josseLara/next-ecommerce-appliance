@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavProduct } from 'store/reducers/user';
 import { RootState } from 'store';
 import { ProductTypeList } from 'types';
-import CheckboxColor from 'components/products-filter/form-builder/checkbox-color';
 
 const ProductItem = ({ discount, images, id, name, price, currentPrice, colors }: ProductTypeList) => {
   const dispatch = useDispatch();

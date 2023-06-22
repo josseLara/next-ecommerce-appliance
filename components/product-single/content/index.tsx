@@ -20,10 +20,9 @@ const Content = ({ product }: ProductContent) => {
 
   const onColorSet = (e: string) => setColor(e);
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => setItemSize(e.target.value);
-
   const { favProducts } = useSelector((state: RootState) => state.user);
   const isFavourite = some(favProducts, productId => productId === product.id);
-
+  console.log(onSelectChange)
   const toggleFav = () => {
     dispatch(toggleFavProduct(
       { 

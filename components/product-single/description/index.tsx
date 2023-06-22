@@ -1,3 +1,5 @@
+import TableProduct from '../../table-product';
+
 type ProductDescriptionType = {
   show: boolean;
 }
@@ -14,14 +16,10 @@ const Description = ({ show }: ProductDescriptionType) => {
         <h4>Details and product description</h4>
         <p>White Summer Vibes T-shirt in the uiKit line with a colorful print. <br></br>Made of jersey cotton. T-shirt fits perfectly with jeans, pants or shorts.</p>
       </div>
-      <div className="product-description-block">
-        <i className="icon-cart"></i>
-        <h4>Details and product description</h4>
-        <p>White Summer Vibes T-shirt in the uiKit line with a colorful print. <br></br>Made of jersey cotton. T-shirt fits perfectly with jeans, pants or shorts.</p>
-      </div>
+      
+      <TableProduct />
     </section>
   );
 };
-  
+
 export default Description;
-    

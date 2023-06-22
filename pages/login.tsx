@@ -7,10 +7,11 @@ import { postData } from '../utils/services';
 type LoginMail = {
   email: string;
   password: string;
+  keepSigned:string;
 }
 
 const LoginPage = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginMail>();
 
   const onSubmit = async (data: LoginMail) => {
     const res = await postData(`${server}/api/login`, {
@@ -43,7 +44,7 @@ const LoginPage = () => {
                     className="form__input"
                     placeholder="email"
                     type="text"
-                    name="email"
+                    // name="email"
                     {...register("email", {
                       required: true,
                       pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -63,7 +64,7 @@ const LoginPage = () => {
                     className="form__input"
                     type="password"
                     placeholder="Password"
-                    name="password"
+                    // name="password"
                     {...register("password", {
                       required: true,
                     })}
@@ -79,7 +80,7 @@ const LoginPage = () => {
                       <input
                         type="checkbox"
                         id="check-signed-in"
-                        name="keepSigned"
+                        // name="keepSigned"
                         {...register("keepSigned", { required: false })}
                       />
                       <span className="checkbox__check"></span>
@@ -99,7 +100,7 @@ const LoginPage = () => {
                 <p className="form__signup-link">Not a member yet? <a href="/register">Sign up</a></p>
               </form>
             </div>
-            <img src="https://i.pinimg.com/474x/e0/63/1e/e0631e8b2e86e59ba84b7bb9b1e6c674.jpg" alt="login img" className='img-form' />
+            <img src="../../public/images/featured-1.png" alt="login img" className='img-form' />
           </div>
 
         </div>
