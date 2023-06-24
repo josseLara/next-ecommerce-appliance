@@ -48,13 +48,17 @@
     "noEmit": true,
     "incremental": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
     /* Experimental Options */
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+    "paths": {
+      "@/*": ["/*"]
+    }
   },
   "exclude": [],
   "include": [
-    "pages"
-  ]
+    "*/**.tsx",
+    "*/**.ts"
+  ],
 }

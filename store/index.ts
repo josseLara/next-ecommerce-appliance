@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   user: userReducer,
 })
 
-let store = configureStore({ 
+export let store = configureStore({ 
   reducer,
 });
 

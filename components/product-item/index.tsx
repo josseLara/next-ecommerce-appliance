@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { some } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavProduct } from 'store/reducers/user';
-import { RootState } from 'store';
+import { toggleFavProduct } from '../../store/reducers/user';
+import { RootState } from '../../store';
 import { ProductTypeList } from 'types';
 
 const ProductItem = ({ discount, images, id, name, price, currentPrice, colors }: ProductTypeList) => {
