@@ -1,12 +1,12 @@
 import Layout from '../layouts/Main';
-// import PageIntro from '../components/page-intro';
+import PageIntro from '../components/page-intro';
 import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
 
 const IndexPage = () => {
   return (
     <Layout>
-      {/* <PageIntro /> */}
+      <PageIntro />
 
       <section className="featured">
         <div className="container">
@@ -70,7 +70,7 @@ const IndexPage = () => {
         </div>
       </section>
 
-      {/* <ProductsFeatured /> */}
+      <ProductsFeatured />
       <Footer />
     </Layout>
   )
